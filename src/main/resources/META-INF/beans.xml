@@ -6,8 +6,8 @@
     <alternatives>
         <class>at.gepardec.cditraining.uc.alternatives.ServiceDev</class>
     </alternatives>
-<!--    <interceptors>-->
-<!--        <class>at.gepardec.cditraining.interceptors.SecondInterceptor</class>-->
-<!--        <class>at.gepardec.cditraining.interceptors.FirstInterceptor</class>-->
-<!--    </interceptors>-->
+    <interceptors>
+        <class>at.gepardec.cditraining.interceptors.SecondInterceptor</class>
+        <class>at.gepardec.cditraining.interceptors.FirstInterceptor</class>
+    </interceptors>
 </beans>
