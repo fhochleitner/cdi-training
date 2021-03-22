@@ -9,5 +9,7 @@
     <interceptors>
         <class>at.gepardec.cditraining.interceptors.SecondInterceptor</class>
         <class>at.gepardec.cditraining.interceptors.FirstInterceptor</class>
+        <class>at.gepardec.cditraining.interceptors.BBindingInterceptor</class>
+        <class>at.gepardec.cditraining.interceptors.ABindingInterceptor</class>
     </interceptors>
 </beans>
