@@ -1,7 +1,9 @@
 package at.gepardec.cditraining.scopes;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
+@ApplicationScoped
 public class ApplicationBean {
 
     // For a later example
