@@ -19,6 +19,7 @@ public class QualifiersController {
     private Shape circle;
 
     @Inject
+    @RectangleShape
     private Shape rectangle;
 
     @GET

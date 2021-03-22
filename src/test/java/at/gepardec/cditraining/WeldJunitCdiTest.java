@@ -33,7 +33,6 @@ public class WeldJunitCdiTest {
     private Models models = mock(Models.class);
 
     @Inject
-    @Any
     private Shape shape;
 
     @Test
