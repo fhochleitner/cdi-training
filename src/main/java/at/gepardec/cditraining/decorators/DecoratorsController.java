@@ -18,7 +18,6 @@ public class DecoratorsController {
 
     @Path("/")
     @GET
-    @BindingInterceptor("B")
     public String get() {
         service.doSomething();
         service.doSomethingElse();

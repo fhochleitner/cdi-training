@@ -14,7 +14,6 @@ public class InterceptorsController {
 
     @GET
     @SecondIntercept
-    @BindingInterceptor("B")
     public String basic() {
         return "interceptors/interceptors.html";
     }
