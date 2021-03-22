@@ -2,6 +2,8 @@ package at.gepardec.cditraining.producers;
 
 import at.gepardec.cditraining.qualifiers.Circle;
 import at.gepardec.cditraining.qualifiers.Rectangle;
+import at.gepardec.cditraining.qualifiers.RectangleShape;
+import at.gepardec.cditraining.qualifiers.Shape;
 import org.slf4j.Logger;
 
 import javax.enterprise.context.RequestScoped;
@@ -29,6 +31,13 @@ public class ProducersController {
     @Inject
     private ProducedBean producedBean;
 
+    @Inject
+    private List<Shape> circles;
+
+    @Inject
+    @RectangleShape
+    private List<Shape> rectangles;
+
     @GET
     @Path("/")
     public String get() {
@@ -36,8 +45,8 @@ public class ProducersController {
         logger.info("ProducedBean value: " + producedBean.getValue() + " ProducedBean: " + producedBean);
 
         // Here you put your produced lists in
-        model.put("circleList", List.of(new Circle(), new Circle()));
-        model.put("rectangleList", List.of(new Rectangle(), new Rectangle()));
+        model.put("circleList", circles);
+        model.put("rectangleList", rectangles);
 
         model.put("producedString", producedString);
         model.put("producedBeanValue", producedBean.getValue());

@@ -1,14 +1,29 @@
 package at.gepardec.cditraining.producers;
 
+import at.gepardec.cditraining.qualifiers.Circle;
+import at.gepardec.cditraining.qualifiers.Rectangle;
+import at.gepardec.cditraining.qualifiers.RectangleShape;
+import at.gepardec.cditraining.qualifiers.Shape;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.Dependent;
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
+import javax.inject.Inject;
+import java.util.List;
 
 @Dependent
 public class BeanProducer {
+
+    @Inject
+    private Shape circle;
+
+    @Inject
+    @RectangleShape
+    private Shape rectangle;
 
     /**
      * This is a producer field.
@@ -25,6 +40,19 @@ public class BeanProducer {
      */
     @Produces
     ProducedBean producedBean = new ProducedBean();
+
+    @Produces
+    @RequestScoped
+    List<Shape> getCircles(){
+        return List.of(new Circle(), new Circle());
+    }
+
+    @Produces
+    @ApplicationScoped
+    @RectangleShape
+    List<Shape>  getRectangles(){
+        return List.of(new Rectangle(), new Rectangle());
+    }
 
     /**
      * This is a producer method.
