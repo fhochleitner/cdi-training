@@ -15,7 +15,7 @@ import javax.ws.rs.Path;
 public class InjectController {
 
     @Inject
-    private InjectModel model = new InjectModel();
+    private InjectModel model;
 
     @GET
     @Path("/")
