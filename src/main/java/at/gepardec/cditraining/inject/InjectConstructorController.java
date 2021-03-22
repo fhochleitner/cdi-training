@@ -1,6 +1,7 @@
 package at.gepardec.cditraining.inject;
 
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.mvc.Controller;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -13,6 +14,7 @@ import javax.ws.rs.Path;
 @Controller
 public class InjectConstructorController {
 
+    @Inject
     private InjectModel model;
 
     /**
