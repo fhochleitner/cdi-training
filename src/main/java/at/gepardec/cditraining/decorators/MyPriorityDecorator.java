@@ -2,14 +2,12 @@ package at.gepardec.cditraining.decorators;
 
 import org.slf4j.Logger;
 
-import javax.annotation.Priority;
 import javax.decorator.Decorator;
 import javax.decorator.Delegate;
 import javax.inject.Inject;
-import javax.interceptor.Interceptor;
 
 @Decorator
-public abstract class ServiceDecorator implements ServiceApi {
+public abstract class MyPriorityDecorator implements ServiceApi {
 
     @Inject
     private Logger log;
@@ -18,10 +16,14 @@ public abstract class ServiceDecorator implements ServiceApi {
     @Delegate
     private ServiceApi delegate;
 
+
+
     @Override
     public void doSomething() {
-        log.info("decorated before. id=" + this.hashCode());
+        log.info("DECORATED SOMETHING VERY IMPORTANT AT THE VERY BEGINNING");
         delegate.doSomething();
-        log.info("decorated after. id=" + this.hashCode());
+        log.info("DECORATED SOMETHING VERY IMPORTANT AT THE VERY END");
+
     }
+
 }

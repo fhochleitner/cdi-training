@@ -12,4 +12,8 @@
         <class>at.gepardec.cditraining.interceptors.BBindingInterceptor</class>
         <class>at.gepardec.cditraining.interceptors.ABindingInterceptor</class>
     </interceptors>
+    <decorators>
+        <class>at.gepardec.cditraining.decorators.MyPriorityDecorator</class>
+        <class>at.gepardec.cditraining.decorators.ServiceDecorator</class>
+    </decorators>
 </beans>
