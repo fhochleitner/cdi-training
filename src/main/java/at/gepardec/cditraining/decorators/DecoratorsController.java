@@ -1,5 +1,7 @@
 package at.gepardec.cditraining.decorators;
 
+import at.gepardec.cditraining.interceptors.BindingInterceptor;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.mvc.Controller;
@@ -16,6 +18,7 @@ public class DecoratorsController {
 
     @Path("/")
     @GET
+    @BindingInterceptor("B")
     public String get() {
         service.doSomething();
         service.doSomethingElse();
